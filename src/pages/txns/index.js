@@ -50,7 +50,7 @@ export default TxnList
 
 
 export async function getStaticProps() {
-    const txns = await getRecentTxns(100)
+    const txns = await getRecentTxns(1000)
     // const jsonDirectory = path.join(process.cwd(), 'json');
     // const txns = JSON.parse(fs.readFileSync(jsonDirectory + '/txns.json', 'utf-8'))
     console.log(txns.length)

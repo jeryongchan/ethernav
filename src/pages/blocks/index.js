@@ -49,7 +49,7 @@ function BlockList({ blocks }) {
 export default BlockList
 
 export async function getStaticProps() {
-    const blocks = await getRecentBlocks(100)
+    const blocks = await getRecentBlocks(1000)
     // const jsonDirectory = path.join(process.cwd(), 'json');
     // const blocks = JSON.parse(fs.readFileSync(jsonDirectory + '/blocks.json', 'utf-8'))
     console.log(blocks.length)

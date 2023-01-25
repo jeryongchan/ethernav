@@ -1,6 +1,6 @@
 import Link from 'next/link'
-// import getRecentBlocks from "../utils/getRecentBlocks";
-// import getRecentTxns from "../utils/getRecentTxns";
+import getRecentBlocks from "../utils/getRecentBlocks";
+import getRecentTxns from "../utils/getRecentTxns";
 import BlockList from '../components/RecentBlockList';
 import TxnList from '../components/RecentTxnList';
 import Grid from '@mui/material/Grid';
@@ -8,8 +8,8 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import { useTheme } from '@emotion/react';
-import * as fs from 'fs'
-const path = require('path');
+// import * as fs from 'fs'
+// const path = require('path');
 
 function Home({ blocks, txns }) {
     const theme = useTheme()
@@ -81,11 +81,11 @@ function Home({ blocks, txns }) {
 export default Home
 
 export async function getStaticProps() {
-    // const blocks = await getRecentBlocks(100)
-    // const txns = await getRecentTxns(100)
-    const jsonDirectory = path.join(process.cwd(), 'json');
-    const blocks = JSON.parse(fs.readFileSync(jsonDirectory + '/blocks.json', 'utf-8'))
-    const txns = JSON.parse(fs.readFileSync(jsonDirectory + '/txns.json', 'utf-8'))
+    const blocks = await getRecentBlocks(100)
+    const txns = await getRecentTxns(100)
+    // const jsonDirectory = path.join(process.cwd(), 'json');
+    // const blocks = JSON.parse(fs.readFileSync(jsonDirectory + '/blocks.json', 'utf-8'))
+    // const txns = JSON.parse(fs.readFileSync(jsonDirectory + '/txns.json', 'utf-8'))
     // console.log(blocks.length)
     // console.log(txns.length)
     return {

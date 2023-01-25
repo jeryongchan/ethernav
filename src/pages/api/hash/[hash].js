@@ -4,8 +4,9 @@ var Web3 = require('web3');
 
 export default async function handler(req, res) {
     const { hash } = req.query
-    const url = "https://mainnet.infura.io/v3/4481b75d4452409cbb634431a86de1b9";
-    const web3 = new Web3(new Web3.providers.HttpProvider(url));
+    const MONGO_URL = process.env.MONGODB_URI
+    const INFURA_URL = process.env.INFURA_URL
+    const web3 = new Web3(new Web3.providers.HttpProvider(INFURA_URL));
     if (validateHash(hash)) {
         const transaction = await web3.eth.getTransaction(hash);
         if (transaction) {

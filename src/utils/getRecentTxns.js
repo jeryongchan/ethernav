@@ -29,8 +29,8 @@ async function getBlocksFromNode(web3, first, last) {
 }
 
 export default async function getRecentTxns(n) {
-    const url = "https://mainnet.infura.io/v3/4481b75d4452409cbb634431a86de1b9";
-    const web3 = new Web3(new Web3.providers.HttpProvider(url));
+    const INFURA_URL = process.env.INFURA_URL
+    const web3 = new Web3(new Web3.providers.HttpProvider(INFURA_URL));
     const latestBlockNumber = await web3.eth.getBlockNumber()
     const averageTxnsPerBlock = 139;
     const minNumBlocks = Math.ceil(n/averageTxnsPerBlock) + 1;
