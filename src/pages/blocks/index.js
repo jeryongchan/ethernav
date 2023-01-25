@@ -58,6 +58,6 @@ export async function getStaticProps() {
         props: {
             blocks: blocks
         },
-        revalidate: 60
+        revalidate: 10
     }
 }
