@@ -157,7 +157,7 @@ export async function getStaticProps() {
             txnBinsByPastNDay: txnBinsByPastNDay,
             txnBinsPerSecByPastNDay: txnBinsPerSecByPastNDay
         },
-        revalidate: 10
+        revalidate: 30
     }
 }
 

@@ -34,7 +34,7 @@ function Home({ blocks, txns }) {
                             bgcolor: theme.palette.background.tertiary,
 
                         }}>
-                            <Link href='/txns' style={{
+                            <Link href='/blocks' style={{
                                 textDecoration: 'none',
                                 color: theme.palette.text.primary,
                                 fontSize: 14,
